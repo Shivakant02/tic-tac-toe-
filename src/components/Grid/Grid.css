@@ -1,3 +1,6 @@
+.grid-wrapper{
+    width: 500px;
+}
 .grid{
     width: 500px;
     height: 500px;
@@ -5,4 +8,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     color: black;
+}
+.reset{
+    padding:1rem;
+    color: white;
+    background-color: var(--resetGreen);
+    border-radius: 20px;
+    border: none;
+    width: 100%;
 }
