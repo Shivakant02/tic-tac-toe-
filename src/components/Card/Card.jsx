@@ -1,5 +1,6 @@
 // import React from 'react'
 
+import { memo } from "react"
 import Icon from "../Icon/Icon"
 import "./Card.css"
 
@@ -19,4 +20,4 @@ function Card({  onPlay, player ,index}) {
   )
 }
 
-export default Card
+export default memo(Card);

@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import Card from "../Card/Card"
 import './Grid.css'
 
@@ -29,9 +29,9 @@ function Grid({ numOfcards }) {
   const [winner, setWinner] = useState("")
   // console.log(turn)
 
-  function play(index) {
-    console.log("move played",index);
-    if (turn==true) {
+  let play = useCallback(function playCallback(index) {
+    console.log("move played", index);
+    if (turn == true) {
       board[index] = "O";
     }
     else {
@@ -46,7 +46,8 @@ function Grid({ numOfcards }) {
     setBoard([...board])
     setTurn(!turn);
       
-  }
+  }, [turn]);
+
 
   function reset() {
     setBoard(Array(numOfcards).fill(""));
